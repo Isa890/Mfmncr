@@ -1,0 +1,708 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
+
+header {
+    background: #2c3e50;
+    color: #fff;
+    padding: 1rem;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+.logo h1 {
+    font-size: 1.5rem;
+}
+
+.nav-toggle {
+    display: none;
+    cursor: pointer;
+    font-size: 1.5rem;
+    color: #fff;
+}
+
+#nav-icon {
+    transition: transform 0.3s;
+}
+
+#nav-menu {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+#nav-menu li {
+    margin-left: 2rem;
+}
+
+#nav-menu a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+#nav-menu a:hover {
+    color: #e74c3c;
+}
+
+.hero {
+    display: flex;
+    height: 80vh;
+    background: #ecf0f1;
+    align-items: center;
+    padding: 2rem;
+}
+
+.hero-content {
+    flex: 1;
+}
+
+.hero-image {
+    flex: 1;
+    text-align: center;
+}
+
+.hero img {
+    max-width: 100%;
+    height: auto;
+}
+
+.btn {
+    background: #e74c3c;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.btn:hover {
+    background: #c0392b;
+}
+
+section {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+}
+
+.service {
+    background: #f4f4f4;
+    padding: 1rem;
+    border-radius: 5px;
+}
+
+.announcement {
+    background: #f9f9f9;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-left: 5px solid #e74c3c;
+}
+
+#contact-form {
+    display: flex;
+    flex-direction: column;
+    max-width: 500px;
+}
+
+#contact-form input, #contact-form textarea {
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+footer {
+    background: #2c3e50;
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+}
+
+/* Interactive Elements */
+.carousel {
+    position: relative;
+    overflow: hidden;
+}
+
+.carousel img {
+    width: 100%;
+    display: none;
+}
+
+.carousel img.active {
+    display: block;
+}
+
+.carousel button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0,0,0,0.5);
+    color: #fff;
+    border: none;
+    padding: 1rem;
+    cursor: pointer;
+}
+
+.carousel .prev {
+    left: 0;
+}
+
+/* Admin Styles */
+#admin {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    padding: 2rem 0;
+}
+
+#admin h2 {
+    text-align: center;
+    color: #fff;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+#login, #dashboard {
+    max-width: 600px;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    padding: 2rem;
+    backdrop-filter: blur(10px);
+}
+
+#login h3, #dashboard h3 {
+    color: #333;
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+    text-align: center;
+}
+
+#login-form, #announcement-form {
+    display: flex;
+    flex-direction: column;
+}
+
+#login-form input, #announcement-form input, #announcement-form textarea {
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+#login-form input:focus, #announcement-form input:focus, #announcement-form textarea:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 10px rgba(102, 126, 234, 0.3);
+}
+
+#announcement-form textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.btn {
+    background: linear-gradient(45deg, #667eea, #764ba2);
+    color: #fff;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    cursor: pointer;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: transform 0.2s, box-shadow 0.2s;
+    margin-top: 0.5rem;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+}
+
+#admin-announcements-list {
+    margin-top: 2rem;
+}
+
+.admin-announcement {
+    background: #f8f9fa;
+    border: 1px solid #e9ecef;
+    border-radius: 8px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    position: relative;
+    transition: box-shadow 0.3s;
+}
+
+.admin-announcement:hover {
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.admin-announcement h4 {
+    color: #495057;
+    margin-bottom: 0.5rem;
+}
+
+.admin-announcement p {
+    color: #6c757d;
+    margin-bottom: 1rem;
+}
+
+.delete-btn {
+    background: #dc3545;
+    color: #fff;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    transition: background 0.3s;
+}
+
+.delete-btn:hover {
+    background: #c82333;
+}
+
+/* Admin Header */
+header {
+    background: linear-gradient(90deg, #2c3e50, #34495e);
+    color: #fff;
+    padding: 1rem;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+/* Groups Page Styles */
+.groups-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.group-card {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    padding: 2rem;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.group-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+.group-icon {
+    font-size: 3rem;
+    color: #3498db;
+    margin-bottom: 1rem;
+}
+
+.group-card h3 {
+    color: #2c3e50;
+    margin-bottom: 1rem;
+}
+
+.group-card p {
+    color: #7f8c8d;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.group-details {
+    background: #f8f9fa;
+    padding: 1rem;
+    border-radius: 8px;
+    text-align: left;
+}
+
+.group-details p {
+    margin: 0.5rem 0;
+    color: #495057;
+    font-size: 0.9rem;
+}
+
+.group-details strong {
+    color: #2c3e50;
+}
+
+/* Join Groups Section */
+#join-groups {
+    background: #f8f9fa;
+    padding: 4rem 2rem;
+    text-align: center;
+}
+
+.join-options {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.join-card {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.join-card h3 {
+    color: #2c3e50;
+    margin-bottom: 1rem;
+}
+
+.join-card ul {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+}
+
+.join-card li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #ecf0f1;
+    color: #7f8c8d;
+}
+
+.join-card li:before {
+    content: "✓";
+    color: #27ae60;
+    font-weight: bold;
+    margin-right: 0.5rem;
+}
+
+/* Branches Page Styles */
+.branches-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.branch-card {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.branch-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+.branch-header {
+    background: linear-gradient(90deg, #3498db, #2980b9);
+    color: #fff;
+    padding: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.branch-header h3 {
+    margin: 0;
+    font-size: 1.3rem;
+}
+
+.branch-status {
+    background: rgba(255,255,255,0.2);
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+.branch-status.Headquarters {
+    background: #e74c3c;
+}
+
+.branch-status.Growing {
+    background: #f39c12;
+}
+
+.branch-info {
+    padding: 1.5rem;
+    background: #f8f9fa;
+}
+
+.branch-info p {
+    margin: 0.5rem 0;
+    color: #495057;
+    font-size: 0.9rem;
+}
+
+.branch-info i {
+    color: #3498db;
+    margin-right: 0.5rem;
+    width: 16px;
+}
+
+.branch-description {
+    padding: 1.5rem;
+}
+
+.branch-description p {
+    color: #7f8c8d;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Branch Map Section */
+#branch-map {
+    background: #f8f9fa;
+    padding: 4rem 2rem;
+    text-align: center;
+}
+
+.map-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.map-placeholder {
+    background: #fff;
+    border-radius: 10px;
+    padding: 3rem;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.map-placeholder i {
+    font-size: 4rem;
+    color: #3498db;
+    margin-bottom: 1rem;
+}
+
+.map-placeholder h3 {
+    color: #2c3e50;
+    margin-bottom: 1rem;
+}
+
+.map-placeholder p {
+    color: #7f8c8d;
+    font-size: 1.1rem;
+}
+
+/* Start Branch Section */
+#start-branch {
+    padding: 4rem 2rem;
+    text-align: center;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: #fff;
+}
+
+.start-branch-info {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.requirement-card, .contact-card {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    color: #333;
+}
+
+.requirement-card h3, .contact-card h3 {
+    color: #2c3e50;
+    margin-bottom: 1rem;
+}
+
+.requirement-card ul {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+}
+
+.requirement-card li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #ecf0f1;
+    color: #7f8c8d;
+}
+
+.requirement-card li:before {
+    content: "•";
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 0.5rem;
+}
+
+.contact-card p {
+    margin: 0.5rem 0;
+    color: #495057;
+}
+
+.contact-card i {
+    color: #3498db;
+    margin-right: 0.5rem;
+}
+
+/* Active Navigation Link */
+#nav-menu .active {
+    background: rgba(255,255,255,0.1);
+    border-radius: 5px;
+}
+
+/* Responsive Design for Groups and Branches */
+@media (max-width: 768px) {
+    .groups-grid, .branches-grid, .join-options, .start-branch-info {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .group-card, .branch-card, .join-card, .requirement-card, .contact-card {
+        padding: 1.5rem;
+    }
+
+    .branch-header {
+        flex-direction: column;
+        text-align: center;
+        gap: 0.5rem;
+    }
+
+    .map-placeholder {
+        padding: 2rem;
+    }
+
+    .map-placeholder i {
+        font-size: 3rem;
+    }
+}
+
+header nav .logo h1 {
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+header nav ul li a {
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+header nav ul li a:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .nav-toggle {
+        display: block;
+    }
+
+    #nav-menu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: #2c3e50;
+        flex-direction: column;
+        padding: 1rem 0;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    #nav-menu.active {
+        display: flex;
+    }
+
+    #nav-menu li {
+        margin: 0;
+        text-align: center;
+    }
+
+    #nav-menu li a {
+        display: block;
+        padding: 1rem;
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+
+    #nav-menu li:last-child a {
+        border-bottom: none;
+    }
+
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        height: auto;
+        padding: 2rem 1rem;
+    }
+
+    .hero-content, .hero-image {
+        flex: none;
+    }
+
+    section {
+        padding: 1rem;
+    }
+}
+
+/* Responsive Admin Styles */
+@media (max-width: 768px) {
+    #admin {
+        padding: 1rem 0;
+    }
+
+    #admin h2 {
+        font-size: 2rem;
+    }
+
+    #login, #dashboard {
+        padding: 1.5rem;
+        margin: 0 1rem;
+    }
+
+    #login h3, #dashboard h3 {
+        font-size: 1.5rem;
+    }
+
+    .admin-announcement {
+        padding: 0.75rem;
+    }
+
+    .delete-btn {
+        position: static;
+        margin-top: 0.5rem;
+        width: 100%;
+    }
+}

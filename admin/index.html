@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - MFM NCR24</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <h1><i class="fas fa-church"></i> MFM NCR24 Admin</h1>
+            </div>
+            <ul>
+                <li><a href="../index.html"><i class="fas fa-home"></i> Back to Site</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="admin">
+        <h2><i class="fas fa-cog"></i> Admin Panel</h2>
+        <div id="login" style="display: block;">
+            <h3><i class="fas fa-lock"></i> Login</h3>
+            <form id="login-form">
+                <input type="password" id="password" placeholder="Enter Password" required>
+                <button type="submit" class="btn"><i class="fas fa-sign-in-alt"></i> Login</button>
+            </form>
+        </div>
+        <div id="dashboard" style="display: none;">
+            <h3><i class="fas fa-plus-circle"></i> Add Announcement</h3>
+            <form id="announcement-form">
+                <input type="text" id="title" placeholder="Announcement Title" required>
+                <textarea id="content" placeholder="Announcement Content" required></textarea>
+                <button type="submit" class="btn"><i class="fas fa-paper-plane"></i> Add Announcement</button>
+            </form>
+            <h3><i class="fas fa-list"></i> Existing Announcements</h3>
+            <div id="admin-announcements-list"></div>
+        </div>
+    </section>
+
+    <script src="../js/admin.js"></script>
+</body>
+</html>
