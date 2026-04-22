@@ -29,7 +29,7 @@ nav {
 }
 
 .nav-toggle {
-    display: none;
+    display: block;
     cursor: pointer;
     font-size: 1.5rem;
     color: #fff;
@@ -674,6 +674,12 @@ header nav ul li a:hover {
 
     section {
         padding: 1rem;
+    }
+}
+
+@media (min-width: 769px) {
+    .nav-toggle {
+        display: none;
     }
 }
 
