@@ -6,7 +6,9 @@ const images = ['images/church.jpg', 'images/service.jpg', 'images/prayer.jpg'];
 
 function showImage(index) {
     const heroImg = document.getElementById('hero-img');
-    heroImg.src = images[index];
+    if (heroImg) {
+        heroImg.src = images[index];
+    }
 }
 
 // Function to send email with form data
@@ -84,6 +86,9 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function loadAnnouncements() {
+    const list = document.getElementById('announcements-list');
+    if (!list) return; // Only load if element exists
+    
     let announcements = JSON.parse(localStorage.getItem('announcements')) || [];
     if (announcements.length === 0) {
         // Sample announcements
@@ -93,7 +98,6 @@ function loadAnnouncements() {
         ];
         localStorage.setItem('announcements', JSON.stringify(announcements));
     }
-    const list = document.getElementById('announcements-list');
     list.innerHTML = '';
     announcements.forEach(ann => {
         const div = document.createElement('div');
