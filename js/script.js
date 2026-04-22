@@ -37,15 +37,27 @@ document.addEventListener('DOMContentLoaded', () => {
     const navLinks = document.querySelectorAll('nav a');
     navLinks.forEach(link => {
         link.addEventListener('click', (e) => {
+            const href = link.getAttribute('href');
+
+            // If it's an external page link (not starting with #), let it navigate normally
+            if (!href.startsWith('#')) {
+                return; // Allow normal navigation for external pages
+            }
+
+            // Handle internal anchor links
             e.preventDefault();
-            const target = document.querySelector(link.getAttribute('href'));
-            target.scrollIntoView({ behavior: 'smooth' });
+            const target = document.querySelector(href);
+            if (target) {
+                target.scrollIntoView({ behavior: 'smooth' });
+            }
+
             // Close mobile menu after clicking a link
             const navMenu = document.getElementById('nav-menu');
             const navToggle = document.getElementById('nav-toggle');
             if (navMenu.classList.contains('active')) {
                 navMenu.classList.remove('active');
                 navToggle.classList.remove('active');
+                document.getElementById('nav-icon').className = 'fas fa-bars';
             }
         });
     });
@@ -68,7 +80,7 @@ document.addEventListener('DOMContentLoaded', () => {
     setInterval(() => {
         currentImageIndex = (currentImageIndex + 1) % images.length;
         showImage(currentImageIndex);
-    }, 5000); // Change every 10 seconds
+    }, 5000); // Change every 5 seconds
 });
 
 function loadAnnouncements() {

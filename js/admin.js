@@ -1,6 +1,6 @@
 // Admin functionality
 
-const ADMIN_PASSWORD = 'ncr24'; // Simple password for demo
+const ADMIN_PASSWORD = 'mfmncr24'; // Simple password for demo
 
 document.addEventListener('DOMContentLoaded', () => {
     const loginForm = document.getElementById('login-form');
